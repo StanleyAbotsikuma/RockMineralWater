@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="assets/css/material-dashboard.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rock Mineral Water</title>
+  <script type="module" src="/main.js" defer></script>
+  <script type="module" src="func.js" defer></script>
+  <script type="module" src="access.js" defer></script>
+  <style>
+
+  </style>
+</head>
+
+<body>
+<br>
+<br>
+  <div class="text-center">
+    <img src="logo.png" alt="" srcset="" style="width:300px" />
+  </div>
+  <br>
+  <div class="container" style="width:400px">
+    <div data-tauri-drag-region class="titlebar">
+      <div class="titlebar-button" id="titlebar-minimize">
+        <img
+          src="https://api.iconify.design/mdi:window-minimize.svg"
+          alt="minimize"
+        />
+      </div>
+      <div class="titlebar-button" id="titlebar-maximize">
+        <img
+          src="https://api.iconify.design/mdi:window-maximize.svg"
+          alt="maximize"
+        />
+      </div>
+      <div class="titlebar-button" id="titlebar-close">
+        <img src="https://api.iconify.design/mdi:close.svg" alt="close" />
+      </div>
+    </div>
+    
+  
+    <form action="#">
+      <div class="form-outline">
+        <label class="form-label" for="username_input">Username</label>
+        <input type="text" class="form-control" id="username_input" />
+      </div>
+
+      <div class="form-outline ">
+        <label class="form-label" for="password_input">Password</label>
+        <input type="password" class="form-control " id="password_input" />
+      </div>
+      <!-- 2 column grid layout for inline styling -->
+      <div class="row">
+        <div class="col d-flex justify-content-center">
+          <!-- Checkbox -->
+        </div>
+      </div>
+
+      <br>
+      <br>
+      <button type="submit" class="btn btn-primary btn-block mb-4 no-shadow" style="border-radius:0;">Sign in</button>
+    </form>
+
+  </div>
+</body>
+
+</html>
