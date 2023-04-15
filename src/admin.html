@@ -7,276 +7,581 @@
   <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
   <title>
-    Title
+    Admin
   </title>
 
 
 
 
   <link rel="stylesheet" type="text/css" href="styles.css" />
-  <link rel="stylesheet" type="text/css"
-    href="assets/css/css.css" />
+  <link rel="stylesheet" type="text/css" href="assets/css/css.css" />
+  <link rel="stylesheet" type="text/css" href="admin.css" />
 
   <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
   <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
 
   <script src="assets/css/42d5adcbca.js" crossorigin="anonymous"></script>
 
-
+  <link href="assets/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
   <link id="pagestyle" href="assets/css/material-dashboard.min.css" rel="stylesheet" />
   <script async defer src="assets/js/buttons.js"></script>
+  <script type="module" src="main.js" defer></script>
 
+  <script type="module" src="access.js" defer></script>
   <script src="assets/js/material-dashboard.min.js"></script>
+  <script type="module" defer>
+    const { invoke } = window.__TAURI__.tauri;
 
+
+    window.addEventListener("DOMContentLoaded", () => {
+      changePage("dashboard");
+    
+
+    });
+
+    document
+      .getElementById('sign_out').addEventListener("click", function () {
+
+        window.eval("window.location.replace('index.html')");
+        invoke('login_resize');
+      });
+
+
+
+
+      // change page settings
+
+  </script>
 
 </head>
 
 <body class="g-sidenav-show  bg-gray-200">
   <aside class="sidenav navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-3 "
-    id="sidenav-main" style="background-color:#1875be;border-radius: 0%;">
+    id="sidenav-main" style="    padding: 0!important;
+    margin: 0!important;background-color:#1875be;border-radius: 0%;">
     <div class="sidenav-header">
-      <h3 style="color: #fff;padding: 20px;text-align: center;">Admin</h3>
+      <h3 style="color: #fff;padding: 20px;text-align: center;font-size:x-large;">Rock Mineral Water</h3>
     </div>
-
+    <br>
 
     <hr class="horizontal light mt-0 mb-2">
     <div class="collapse navbar-collapse  w-auto h-auto" id="sidenav-collapse-main">
       <ul class="navbar-nav">
-        <br>
+
         <li class="nav-item">
-          <a class="nav-link" target="_blank">
-            
+          <a class="nav-link" target="_blank" onclick="changePage('dashboard')">
+
+            <i class="fas fa-chart-line" style="font-size: 15px;"></i>
             <span class="nav-link-text ms-2 ps-1">Dashboard</span>
           </a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link" target="_blank">
+          <a class="nav-link" target="_blank" onclick="changePage('stocks')">
+            <i class="fas fa-cubes" style="font-size: 15px;"></i>
             <span class="nav-link-text ms-2 ps-1">Stocks</span>
           </a>
         </li>
 
         <li class="nav-item">
-          <a class="nav-link" target="_blank">
+          <a class="nav-link" target="_blank" onclick="changePage('sales')">
+            <i class="fas fa-store" style="font-size: 15px;"></i>
             <span class="nav-link-text ms-2 ps-1">Sales</span>
           </a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link" target="_blank">
+          <a class="nav-link" target="_blank" onclick="changePage('dispatch')">
+            <i class="fas fa-truck-ramp-box" style="font-size: 15px;"></i>
             <span class="nav-link-text ms-2 ps-1">Dispatch</span>
           </a>
         </li>
 
 
         <li class="nav-item">
-          <a class="nav-link" target="_blank">
+          <a class="nav-link" target="_blank" onclick="changePage('staffs')">
+            <i class="fas fa-user-group" style="font-size: 15px;"></i>
             <span class="nav-link-text ms-2 ps-1">Staffs</span>
           </a>
         </li>
 
         <li class="nav-item" style="position: absolute;bottom: 15px;">
-          <a class="nav-link" target="_blank" style="background-color: #c50303;font-weight: 500;">
-            <span class="nav-link-text ms-2 ps-1">SIGN OUT</span>
+
+          <a class="nav-link" target="_blank" style="background-color: #c50303;font-weight: 500;" id="sign_out">
+            <i class="fas fa-power-off" style="font-size: 15px;"></i>
+            <span class="nav-link-text ms-2 ps-1">Sign Out</span>
           </a>
         </li>
 
-        
+
       </ul>
     </div>
   </aside>
-  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg " >
+  <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg ">
     <div data-tauri-drag-region class="titlebar" style="background-color: #FFFFFF00!important;">
       <div class="titlebar-button" id="titlebar-minimize">
-        <img
-          src="https://api.iconify.design/mdi:window-minimize.svg"
-          alt="minimize"
-        />
-      </div>
-      <div class="titlebar-button" id="titlebar-maximize">
-        <img
-          src="https://api.iconify.design/mdi:window-maximize.svg"
-          alt="maximize"
-        />
+        <img src="https://api.iconify.design/mdi:window-minimize.svg" alt="minimize" />
       </div>
       <div class="titlebar-button" id="titlebar-close">
         <img src="https://api.iconify.design/mdi:close.svg" alt="close" />
       </div>
     </div>
-    
 
-    <div class="container-fluid py-4">
-      
 
-    </div>
-    <footer class="footer py-4  ">
-      <div class="container-fluid">
-        <div class="row align-items-center justify-content-lg-between">
-          <div class="col-lg-6 mb-lg-0 mb-4">
-           
+    <div class="container-fluid py-4" style="display:block;position: relative;">
+      <div id="dashboard" class="admin_pages">
+        <h4 class="display-5 " style="    font-weight: bolder;
+    color: #1875be;
+    text-shadow: 0 0 1px #3788d899;">Dashboard</h4>
+
+        <div class="separator"
+          style="height: 10px;width: 100%;background: #1875be9e;box-shadow: 0 0 3px #647489bd;margin-bottom: 50px;">
+        </div>
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
+            <div class="card ">
+              <div class="card-header p-3 pt-2 bg-transparent">
+                <div
+                  class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+                  style="background-color: #1875be!important;background-image: unset;">
+                  <i class="fas fa-truck-fast" style="font-size: 15px;"></i>
+                </div>
+                <div class="text-end pt-1">
+                  <p class="text-sm mb-0 text-capitalize ">Bags Sold</p>
+                  <br>
+                  <hr class="horizontal my-0 dark">
+                  <h4 class="mb-0 " id="bags_sold"></h4>
+                </div>
+              </div>
+
+            </div>
           </div>
-          <div class="col-lg-6">
-            <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+          <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
+            <div class="card ">
+              <div class="card-header p-3 pt-2 bg-transparent">
+                <div
+                  class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+                  style="background-color: #1875be!important;background-image: unset;">
+                  <i class="fas fa-money-bill-wave" style="font-size: 15px;"></i>
+                </div>
+                <div class="text-end pt-1">
+                  <p class="text-sm mb-0 text-capitalize ">Amount Sold</p>
+                  <br>
+                  <hr class="horizontal my-0 dark">
+                  <h4 class="mb-0 " id="amount_sold"></h4>
+                </div>
+              </div>
 
-              <li class="nav-item">
-              </li>
-            </ul>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
+            <div class="card ">
+              <div class="card-header p-3 pt-2 bg-transparent">
+                <div
+                  class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+                  style="background-color: #1875be!important;background-image: unset;">
+                  <i class="fas fa-rotate-left" style="font-size: 15px;"></i>
+                </div>
+                <div class="text-end pt-1">
+                  <p class="text-sm mb-0 text-capitalize ">Bags Returned</p>
+                  <br>
+                  <hr class="horizontal my-0 dark">
+                  <h4 class="mb-0 " id="bags_return"></h4>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
+            <br>
+            <div class="card ">
+              <div class="card-header p-3 pt-2 bg-transparent">
+                <div
+                  class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+                  style="background-color: #1875be!important;background-image: unset;">
+                  <i class="fas fa-store" style="font-size: 15px;"></i>
+                </div>
+                <div class="text-end pt-1">
+                  <p class="text-sm mb-0 text-capitalize ">Bags Left</p>
+                  <br>
+                  <hr class="horizontal my-0 dark">
+                  <h4 class="mb-0 " id="bags_left"></h4>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
+            <br>
+            <div class="card ">
+              <div class="card-header p-3 pt-2 bg-transparent">
+                <div
+                  class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+                  style="background-color: #1875be!important;background-image: unset;">
+                  <i class="fas fa-cubes" style="font-size: 15px;"></i>
+                </div>
+                <div class="text-end pt-1">
+                  <p class="text-sm mb-0 text-capitalize ">Bags Produced</p>
+                  <br>
+                  <hr class="horizontal my-0 dark">
+                  <h4 class="mb-0 " id="bags_produced"></h4>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+      <div id="stocks" class="admin_pages">
+        <h4 class="display-5 " style="    font-weight: bolder;
+        color: #1875be;
+        text-shadow: 0 0 1px #3788d899;">Stocks</h4>
+
+        <div class="separator"
+          style="height: 10px;width: 100%;background: #1875be9e;box-shadow: 0 0 3px #647489bd;margin-bottom: 0;">
+        </div>
+        <div style="height: 80px;width: 100%;background: #1875be9e;box-shadow: 0 0 3px #647489bd;margin-bottom: 50px;">
+       
+
+
+            <!-- Button trigger modal -->
+            <button type="button" class="btn" data-bs-toggle="modal"
+              data-bs-target="#exampleModalSignUp" style=" width: 120px;
+              color: white;
+              box-shadow: none!important;
+              border: none!important;
+              background-color: #114e7e;
+              padding: 10px !important;
+              margin: 10px;
+              font-size: small!important;
+              right: 0;
+              position: absolute;
+          ">
+              Create Today
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalSignUp" tabindex="-1" role="dialog"
+              aria-labelledby="exampleModalSignTitle" aria-hidden="true" style="border-radius: 0!important;">
+              <div class="modal-dialog modal-dialog-centered modal-sm" role="document">
+                <div class="modal-content"  style="border-radius: 0!important;">
+                  <div class="modal-body p-0">
+                    <div class="card card-plain">
+                      <div class="card-header pb-0 text-left">
+                        <h5 class="">CREATE STOCKS FOR TODAY</h5>
+                        <p class="mb-0">Enter the number of bags produced today</p>
+                      </div>
+                      <div class="card-body pb-3">
+                        <form >
+                          <div class="form-outline">
+                          
+                            <input type="text" class="form-control" id="number_of_bags" />
+                          </div>
+                       
+                          
+                          <div class="text-center">
+                            <button type="button"
+                              class="btn bg-gradient-success btn-lg btn-rounded w-100 mt-4 mb-0">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            </div>
+
+
+          
+          <div class="table-responsive">
+            <table class="table align-items-center mb-0">
+              <thead>
+                <tr>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#ID
+                  </th>
+
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Stock ID</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Current Stock</th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Previous Stock
+                  </th>
+                  <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Stock Produced</th>
+                  <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Date</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" .
+                      $row['patients_id'] . "</span>
+                  </td>
+                  <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" .
+                      $row['patients_firstname'] . "</span>
+                  </td>
+                  <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" .
+                      $row['patients_lastname'] . "</span>
+                  </td>
+                  <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" .
+                      $row['patients_email'] . "</span>
+                  </td>
+                  <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" .
+                      $row['patients_phone'] . "</span>
+                  </td>
+
+                  <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" .
+                      $row['patients_residence'] . "</span>
+                  </td>
+                 
+
+                </tr>
+
+
+              </tbody>
+            </table>
+          </div>
+
+
+        </div>
+
+
+
+
+        <div id="sales" class="admin_pages">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
+              <div class="card ">
+                <div class="card-header p-3 pt-2 bg-transparent">
+                  <div
+                    class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+                    style="background-color: #1875be!important;background-image: unset;">
+                    <i class="material-icons opacity-10">groups</i>
+                  </div>
+                  <div class="text-end pt-1">
+                    <p class="text-sm mb-0 text-capitalize ">Patients</p>
+                    <br>
+                    <hr class="horizontal my-0 dark">
+                    <h4 class="mb-0 ">5</h4>
+                  </div>
+                </div>
+                <br>
+                <hr class="horizontal my-0 dark">
+                <div class="card-footer p-3">
+                  <p class="mb-0 ">Just updated</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
+              <div class="card ">
+                <div class="card-header p-3 pt-2 bg-transparent">
+                  <div
+                    class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+                    style="background-color: #1875be!important;background-image: unset;">
+                    <i class="material-icons opacity-10">vaccines</i>
+                  </div>
+                  <div class="text-end pt-1">
+                    <p class="text-sm mb-0 text-capitalize ">Diagnosis</p>
+                    <br>
+                    <hr class="horizontal my-0 dark">
+                    <h4 class="mb-0 ">5</h4>
+                  </div>
+                </div>
+                <br>
+                <hr class="horizontal my-0 dark">
+                <div class="card-footer p-3">
+                  <p class="mb-0 ">Just updated</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+
+
+        <div id="dispatch" class="admin_pages">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
+              <div class="card ">
+                <div class="card-header p-3 pt-2 bg-transparent">
+                  <div
+                    class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+                    style="background-color: #1875be!important;background-image: unset;">
+                    <i class="material-icons opacity-10">groups</i>
+                  </div>
+                  <div class="text-end pt-1">
+                    <p class="text-sm mb-0 text-capitalize ">Patients</p>
+                    <br>
+                    <hr class="horizontal my-0 dark">
+                    <h4 class="mb-0 ">5</h4>
+                  </div>
+                </div>
+                <br>
+                <hr class="horizontal my-0 dark">
+                <div class="card-footer p-3">
+                  <p class="mb-0 ">Just updated</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
+              <div class="card ">
+                <div class="card-header p-3 pt-2 bg-transparent">
+                  <div
+                    class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+                    style="background-color: #1875be!important;background-image: unset;">
+                    <i class="material-icons opacity-10">vaccines</i>
+                  </div>
+                  <div class="text-end pt-1">
+                    <p class="text-sm mb-0 text-capitalize ">Diagnosis</p>
+                    <br>
+                    <hr class="horizontal my-0 dark">
+                    <h4 class="mb-0 ">5</h4>
+                  </div>
+                </div>
+                <br>
+                <hr class="horizontal my-0 dark">
+                <div class="card-footer p-3">
+                  <p class="mb-0 ">Just updated</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+        <div id="staffs" class="admin_pages">
+          <div class="row">
+            <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
+              <div class="card ">
+                <div class="card-header p-3 pt-2 bg-transparent">
+                  <div
+                    class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+                    style="background-color: #1875be!important;background-image: unset;">
+                    <i class="material-icons opacity-10">groups</i>
+                  </div>
+                  <div class="text-end pt-1">
+                    <p class="text-sm mb-0 text-capitalize ">Patients</p>
+                    <br>
+                    <hr class="horizontal my-0 dark">
+                    <h4 class="mb-0 ">5</h4>
+                  </div>
+                </div>
+                <br>
+                <hr class="horizontal my-0 dark">
+                <div class="card-footer p-3">
+                  <p class="mb-0 ">Just updated</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-4">
+              <div class="card ">
+                <div class="card-header p-3 pt-2 bg-transparent">
+                  <div
+                    class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+                    style="background-color: #1875be!important;background-image: unset;">
+                    <i class="material-icons opacity-10">vaccines</i>
+                  </div>
+                  <div class="text-end pt-1">
+                    <p class="text-sm mb-0 text-capitalize ">Diagnosis</p>
+                    <br>
+                    <hr class="horizontal my-0 dark">
+                    <h4 class="mb-0 ">5</h4>
+                  </div>
+                </div>
+                <br>
+                <hr class="horizontal my-0 dark">
+                <div class="card-footer p-3">
+                  <p class="mb-0 ">Just updated</p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+
+
+      </div>
+      <footer class="footer py-4  ">
+        <div class="container-fluid">
+          <div class="row align-items-center justify-content-lg-between">
+            <div class="col-lg-6 mb-lg-0 mb-4">
+
+            </div>
+            <div class="col-lg-6">
+              <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+
+                <li class="nav-item">
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
     </div>
   </main>
-  
+
 
   <script src="assets/js/core/popper.min.js"></script>
   <script src="assets/js/core/bootstrap.min.js"></script>
-  <script src="assets/js/plugins/perfect-scrollbar.min.js"></script>
-  <script src="assets/js/plugins/smooth-scrollbar.min.js"></script>
-  <script src="assets/js/plugins/fullcalendar.min.js"></script>
-
-  <script src="assets/js/plugins/dragula/dragula.min.js"></script>
-  <script src="assets/js/plugins/jkanban/jkanban.js"></script>
-  <script src="assets/js/plugins/chartjs.min.js"></script>
+  <script  src="func.js" ></script>
+  <script  src="stock.js" ></script>
   <script>
-    var ctx1 = document.getElementById("chart-line-1").getContext("2d");
-
-    var ctx2 = document.getElementById("chart-line-2").getContext("2d");
-
-    new Chart(ctx1, {
-      type: "line",
-      data: {
-        labels: ["A", "M", "J", "J", "A", "S", "O", "N", "D"],
-        datasets: [{
-          label: "Visitors",
-          tension: 0.5,
-          borderWidth: 0,
-          pointRadius: 0,
-          borderColor: "#fff",
-          borderWidth: 2,
-          backgroundColor: "transparent",
-          data: [50, 45, 60, 60, 80, 65, 90, 80, 100],
-          maxBarThickness: 6,
-          fill: true
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#f8f9fa',
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#f8f9fa',
-            }
-          },
-        },
-      },
-    });
-
-    new Chart(ctx2, {
-      type: "line",
-      data: {
-        labels: ["A", "M", "J", "J", "A", "S", "O", "N", "D"],
-        datasets: [{
-          label: "Income",
-          tension: 0.5,
-          borderWidth: 0,
-          pointRadius: 0,
-          borderColor: "#fff",
-          borderWidth: 2,
-          backgroundColor: "transparent",
-          data: [60, 80, 75, 90, 67, 100, 90, 110, 120],
-          maxBarThickness: 6,
-          fill: true
-        }],
-      },
-      options: {
-        responsive: true,
-        maintainAspectRatio: false,
-        plugins: {
-          legend: {
-            display: false,
-          }
-        },
-        interaction: {
-          intersect: false,
-          mode: 'index',
-        },
-        scales: {
-          y: {
-            grid: {
-              drawBorder: false,
-              display: false,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-
-            },
-            ticks: {
-              callback: function (value, index, values) {
-                return '$' + value;
-              },
-              display: true,
-              padding: 10,
-              color: '#f8f9fa',
-            }
-          },
-          x: {
-            grid: {
-              drawBorder: false,
-              display: true,
-              drawOnChartArea: true,
-              drawTicks: false,
-              borderDash: [5, 5],
-              color: 'rgba(255, 255, 255, .2)'
-            },
-            ticks: {
-              display: true,
-              padding: 10,
-              color: '#f8f9fa',
-            }
-          },
-        },
-      },
-    });
-  </script>
-  <script>
+    function changePage(page) {
+      document.querySelectorAll('.admin_pages').forEach((admin_pages) => {
+        admin_pages.style.display = "none";
+      });
+      switch (page) {
+        case "dashboard":
+          dashboard();
+          break;
+        case "stocks":
+          stocks();
+          break;
+        case "sales":
+          sales();
+          break;
+        case "dispatch":
+          dispatch();
+          break;
+        case "staffs":
+          staffs();
+          break;
+        default:
+          dashboard();
+      }
+      function dashboard() {
+        ru();
+        document.getElementById('dashboard').style.display = "block";
+      }
+      function stocks() {
+        document.getElementById('stocks').style.display = "block";
+      }
+      function sales() {
+        document.getElementById('sales').style.display = "block";
+      }
+      function dispatch() {
+        document.getElementById('dispatch').style.display = "block";
+      }
+      function staffs() {
+        document.getElementById('staffs').style.display = "block";
+      }
+    }
     var win = navigator.platform.indexOf('Win') > -1;
     if (win && document.querySelector('#sidenav-scrollbar')) {
       var options = {

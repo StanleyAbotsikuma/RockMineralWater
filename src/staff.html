@@ -4,25 +4,35 @@
 <head>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="styles.css" />
+  
+  <link rel="stylesheet" href="staff.css" />
   <link rel="stylesheet" href="assets/css/material-dashboard.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rock Mineral Water</title>
   <script type="module" src="/main.js" defer></script>
   <script type="module" src="func.js" defer></script>
   <script type="module" src="access.js" defer></script>
+  <link id="pagestyle" href="assets/css/material-dashboard.min.css" rel="stylesheet" />
+
+  <script src="assets/js/material-dashboard.min.js"></script>
+
+  <script type="module"  defer>
+    const { invoke } = window.__TAURI__.tauri;
+  
+    document
+  .getElementById('sign_out').addEventListener("click",function ()  {
+    
+    window.eval("window.location.replace('index.html')");
+    invoke('login_resize');
+  });
+  </script>
   <style>
 
   </style>
 </head>
 
 <body>
-<br>
-<br>
-  <div class="text-center">
-    <img src="logo.png" alt="" srcset="" style="width:300px" />
-  </div>
-  <br>
-  <div class="container" style="width:400px">
+
     <div data-tauri-drag-region class="titlebar">
       <div class="titlebar-button" id="titlebar-minimize">
         <img
@@ -30,39 +40,61 @@
           alt="minimize"
         />
       </div>
-      <div class="titlebar-button" id="titlebar-maximize">
-        <img
-          src="https://api.iconify.design/mdi:window-maximize.svg"
-          alt="maximize"
-        />
-      </div>
+      
       <div class="titlebar-button" id="titlebar-close">
         <img src="https://api.iconify.design/mdi:close.svg" alt="close" />
       </div>
     </div>
     
   
-    <form action="#">
-      <div class="form-outline">
-        <label class="form-label" for="username_input">Username</label>
-        <input type="text" class="form-control" id="username_input" />
-      </div>
+  <div class="staffDash">
+    <div>
+      <button id="sign_out">Sign Out</button>
+    </div>
+  </div> 
+  <div class="container-fluid">
+  <div class="card">
+    <div class="table-responsive">
+      <table class="table align-items-center mb-0">
+        <thead>
+          <tr>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Patient ID
+            </th>
 
-      <div class="form-outline ">
-        <label class="form-label" for="password_input">Password</label>
-        <input type="password" class="form-control " id="password_input" />
-      </div>
-      <!-- 2 column grid layout for inline styling -->
-      <div class="row">
-        <div class="col d-flex justify-content-center">
-          <!-- Checkbox -->
-        </div>
-      </div>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">First Name </th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Last Name</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">E-mail</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Phone</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Residence</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date of Registration
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+           <tr>
+<td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['patients_id'] . "</span>
+</td>
+            <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['patients_firstname'] . "</span>
+</td>
+            <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['patients_lastname'] . "</span>
+</td>
+            <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['patients_email'] . "</span>
+</td>
+            <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['patients_phone'] . "</span>
+</td>
 
-      <br>
-      <br>
-      <button type="submit" class="btn btn-primary btn-block mb-4 no-shadow" style="border-radius:0;">Sign in</button>
-    </form>
+            <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['patients_residence'] . "</span>
+</td>
+            <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['date'] . "</span>
+</td>
+
+         </tr>
+      
+
+        </tbody>
+      </table>
+    </div>
+  </div>
 
   </div>
 </body>

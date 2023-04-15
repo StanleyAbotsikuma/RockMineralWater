@@ -1,5 +1,3 @@
-
-
 function ru() {
 
     fetch('http://localhost/final_projects/william/resources/sales.php?r=t', {
@@ -25,7 +23,6 @@ function ru() {
 
 }
 
-// ru();
 
 
 function quantityLeft() {
@@ -41,7 +38,9 @@ function quantityReturned(res) {
         for (let i in res) {
             _quantity_return = _quantity_return + res[i].quantity_return;
         }
-        console.log(_quantity_return);
+
+        document.querySelector('#bags_return').innerHTML = _quantity_return;
+        // console.log(_quantity_return);
     } catch (error) {
         console.log("Error");
     }
@@ -54,7 +53,8 @@ function amountSold(res) {
         for (let i in res) {
             _amountSold = _amountSold + res[i].amount_paid;
         }
-        console.log(_amountSold);
+        document.querySelector('#amount_sold').innerHTML = "₵ " + _amountSold;
+        // console.log(_amountSold);
     } catch (error) {
         console.log("Error");
     }
@@ -66,7 +66,9 @@ function quantitySold(res) {
         for (let i in res) {
             _quantitySold = _quantitySold + res[i].quantity;
         }
-        console.log(_quantitySold);
+
+        document.querySelector('#bags_sold').innerHTML = _quantitySold;
+        // console.log(_quantitySold);
     } catch (error) {
         console.log("Error");
     }
@@ -87,21 +89,37 @@ function quantityReplaced(res) {
 }
 
 
-const dayDetails =  fetch('http://localhost/final_projects/william/resources/stock.php?r=t', {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
+let h = 0;
+let g = 0;
+const dayDetails = fetch('http://localhost/final_projects/william/resources/stock.php?r=t', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+})
+    .then(response => {
+        if (response.ok) {
+            return response.json();
         }
     })
-        .then( response => {
-            if (response.ok) {
-              return  response.json();
-            }
-        })
-        .catch(error => {
-            console.error(error);
-        });
+    .catch(error => {
+        console.error(error);
+    });
 
+
+dayDetails.then((stock) => {
+
+    try {
+        g = stock[0].stock_current;
+    h =  stock[0].stock_produced;
+    } catch (error) {
+        
+    }
+    
+    document.querySelector('#bags_left').innerHTML = g;
+    document.querySelector('#bags_produced').innerHTML = h;
+     console.log(stock);
+})
 
     //   console.log(dayDetails);
 

@@ -40,7 +40,7 @@
         "icons/icon.icns",
         "icons/icon.ico"
       ],
-      "identifier": "com.tauri.dev",
+      "identifier": "com.trevillion.dev",
       "targets": "all"
     },
     "security": {
@@ -56,7 +56,8 @@
         "title": "Rock Mineral Water",
         "width": 450,
         "height": 700,
-        "decorations": false
+        "decorations": false,
+        "center": true
       }
     ]
   }
