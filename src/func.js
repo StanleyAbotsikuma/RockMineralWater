@@ -82,7 +82,7 @@ function quantityReplaced(res) {
         for (let i in res) {
             _quantityReplaced = _quantityReplaced + res[i].quantity_replaced;
         }
-        console.log(_quantityReplaced);
+        // console.log(_quantityReplaced);
     } catch (error) {
         console.log("Error");
     }
@@ -118,7 +118,7 @@ dayDetails.then((stock) => {
     
     document.querySelector('#bags_left').innerHTML = g;
     document.querySelector('#bags_produced').innerHTML = h;
-     console.log(stock);
+    //  console.log(stock);
 })
 
     //   console.log(dayDetails);

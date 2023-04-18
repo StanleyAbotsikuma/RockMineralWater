@@ -52,7 +52,7 @@
     "windows": [
       {
         "fullscreen": false,
-        "resizable": true,
+        "resizable": false,
         "title": "Rock Mineral Water",
         "width": 450,
         "height": 700,

@@ -10,13 +10,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Rock Mineral Water</title>
   <script type="module" src="/main.js" defer></script>
-  <script type="module" src="func.js" defer></script>
+  <script src="func.js" ></script>
   <script type="module" src="access.js" defer></script>
   <link id="pagestyle" href="assets/css/material-dashboard.min.css" rel="stylesheet" />
 
+  <link href="assets/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
   <script src="assets/js/material-dashboard.min.js"></script>
 
   <script type="module"  defer>
+     ru();
     const { invoke } = window.__TAURI__.tauri;
   
     document
@@ -27,6 +29,7 @@
   });
   </script>
   <style>
+    .icon{z-index: 100000;}
 
   </style>
 </head>
@@ -48,49 +51,136 @@
     
   
   <div class="staffDash">
+    <div class="row container-fluid">
+      <div class="col-lg-2 col-md-6 col-sm-6 mt-lg-0 mt-4">
+        <div class="card ">
+          <div class="card-header p-3 pt-2 bg-transparent">
+            <div
+              class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+              style="background-color: #EAAF31!important;background-image: unset;">
+              <i class="fas fa-truck-fast" style="font-size: 15px;"></i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize ">Bags Sold</p>
+              <br>
+              <hr class="horizontal my-0 dark">
+              <h4 class="mb-0 " id="bags_sold"></h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6 mt-lg-0 mt-4">
+        <div class="card ">
+          <div class="card-header p-3 pt-2 bg-transparent">
+            <div
+              class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+              style="background-color: #EAAF31!important;background-image: unset;">
+              <i class="fas fa-money-bill-wave" style="font-size: 15px;"></i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize ">Amount</p>
+              <br>
+              <hr class="horizontal my-0 dark">
+              <h4 class="mb-0 " id="amount_sold"></h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6 mt-lg-0 mt-4">
+        <div class="card ">
+          <div class="card-header p-3 pt-2 bg-transparent">
+            <div
+              class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+              style="background-color: #EAAF31!important;background-image: unset;">
+              <i class="fas fa-rotate-left" style="font-size: 15px;"></i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize ">Returned</p>
+              <br>
+              <hr class="horizontal my-0 dark">
+              <h4 class="mb-0 " id="bags_return"></h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6 mt-lg-0 mt-4">
+        
+        <div class="card ">
+          <div class="card-header p-3 pt-2 bg-transparent">
+            <div
+              class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+              style="background-color: #EAAF31!important;background-image: unset;">
+              <i class="fas fa-store" style="font-size: 15px;"></i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize ">Bags Left</p>
+              <br>
+              <hr class="horizontal my-0 dark">
+              <h4 class="mb-0 " id="bags_left"></h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-2 col-md-6 col-sm-6 mt-lg-0 mt-4">
+       
+        <div class="card ">
+          <div class="card-header p-3 pt-2 bg-transparent">
+            <div
+              class="icon icon-lg icon-shape bg-gradient-info text-center border-radius-xl mt-n4 position-absolute"
+              style="background-color: #EAAF31!important;background-image: unset;">
+              <i class="fas fa-cubes" style="font-size: 15px;"></i>
+            </div>
+            <div class="text-end pt-1">
+              <p class="text-sm mb-0 text-capitalize ">Produced</p>
+              <br>
+              <hr class="horizontal my-0 dark">
+              <h4 class="mb-0 " id="bags_produced"></h4>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+
+    </div>
+    
     <div>
-      <button id="sign_out">Sign Out</button>
+        <button id="" class="bg-gradient-success" style="margin-right: 20px;color: azure;">Sell</button>
+        <hr>
+      <button id="sign_out" class="bg-gradient-danger" style="margin-right: 20px;color: azure;width: 150px;">Sign Out</button>
     </div>
   </div> 
   <div class="container-fluid">
+    <br>
+    <h5  style="    font-weight: bolder;
+    color: #1875be;
+    text-shadow: 0 0 1px #3788d899;">Today's Sales</h5>
   <div class="card">
+   
     <div class="table-responsive">
       <table class="table align-items-center mb-0">
         <thead>
           <tr>
-            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Patient ID
-            </th>
+         
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#Receipt No.</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Type</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Quantity</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Customer Name</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Customer Phone</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Customer Address</th>
+            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Amount</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#Rider ID</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Returned</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Replaced</th>
+            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date</th>
 
-            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">First Name </th>
-            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7 ps-2">Last Name</th>
-            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">E-mail</th>
-            <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Phone</th>
-            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Residence</th>
-            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Date of Registration
-            </th>
           </tr>
         </thead>
-        <tbody>
-           <tr>
-<td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['patients_id'] . "</span>
-</td>
-            <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['patients_firstname'] . "</span>
-</td>
-            <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['patients_lastname'] . "</span>
-</td>
-            <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['patients_email'] . "</span>
-</td>
-            <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['patients_phone'] . "</span>
-</td>
-
-            <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['patients_residence'] . "</span>
-</td>
-            <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>" . $row['date'] . "</span>
-</td>
-
-         </tr>
-      
-
+        <tbody id="sales_body">
         </tbody>
       </table>
     </div>
@@ -98,5 +188,46 @@
 
   </div>
 </body>
+<script src="sales.js"></script>
+<script>
+  function sales() {
+         const sales_tbody = document.querySelector('#sales_body');
+        getAllSales().then((response) => {
+          sales_tbody.innerHTML = "";
+          response.forEach(dts => {
+            let{
+              sales_receipt,
+              sales_type,
+              quantity,
+              customer_name,
+              customer_phone,
+              customer_address,
+              amount_paid,
+              dispatch_id,
+              quantity_return,
+              quantity_replaced,
+              date} = dts;
+            sales_tbody.innerHTML += `<tr>
+                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${sales_receipt}</span></td>
+                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${sales_type}</span></td>
+                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${quantity}</span></td>
+                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${customer_name}</span></td>
+                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${customer_phone}</span></td> 
+                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${customer_address}</span></td>
+                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${amount_paid}</span></td>
+                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${dispatch_id}</span></td> 
+                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${quantity_return}</span></td>
+                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${quantity_replaced}</span></td> 
+                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${date}</span></td>
+                </tr>`;
+          });
+          // console.log(data);
+        })
+          .catch(error => console.error(error));
 
+      }
+
+
+      sales();
+</script>
 </html>
