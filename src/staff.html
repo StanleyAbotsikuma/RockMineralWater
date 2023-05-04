@@ -17,6 +17,14 @@
   <link href="assets/fontawesome-free-6.4.0-web/css/all.css" rel="stylesheet">
   <script src="assets/js/material-dashboard.min.js"></script>
 
+
+  <script async defer src="assets/js/buttons.js"></script>
+
+
+  <script type="module" src="access.js" defer></script>
+
+
+
   <script type="module"  defer>
      ru();
     const { invoke } = window.__TAURI__.tauri;
@@ -149,8 +157,8 @@
     </div>
     
     <div>
-        <button id="" class="bg-gradient-success" style="margin-right: 20px;color: azure;"data-bs-toggle="modal" data-bs-target="#salesCreate" >Sell</button>
-        <div class="modal fade" id="salesCreate" tabindex="-1" role="dialog" aria-labelledby="modalsalesTitle"
+        <button id="" class="bg-gradient-success" style="margin-right: 20px;color: azure;" type="button" class="btn"  data-bs-toggle="modal" data-bs-target="#salesCreate" >Sell</button>
+        <div class="modal fade " id="salesCreate" tabindex="-1" role="dialog" aria-labelledby="modalsalesTitle"
         aria-hidden="true" style="border-radius: 0!important;">
         <div class="modal-dialog modal-dialog-centered modal-md" role="document">
           <div class="modal-content" style="border-radius: 0!important;">

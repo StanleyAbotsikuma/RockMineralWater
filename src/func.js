@@ -25,9 +25,23 @@ function ru() {
 
 
 
-function quantityLeft() {
+// function quantityLeft() {
+  
 
-}
+
+//     try {
+//         var _quantitySold = 0;
+//         for (let i in res) {
+//             _quantitySold = _quantitySold + res[i].quantity;
+//         }
+
+//         document.querySelector('#bags_sold').innerHTML = _quantitySold;
+//         // console.log(_quantitySold);
+//     } catch (error) {
+//         console.log("Error");
+//     }
+
+// }
 
 
 

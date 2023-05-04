@@ -738,13 +738,13 @@
     customer_phone: customerPhone,
     customer_address: customerAddress,
     amount_paid: amountPaid,
-    dispatch_id: dispatchId,
+    dispatch_id: dispatchId
   };
   
   insertSale(saleData)
     .then(data => console.log('Inserted sale:', data))
     .catch(error => console.error('Error inserting sale:', error));
-      // console.log();
+     console.log(error);
     });
 
 
