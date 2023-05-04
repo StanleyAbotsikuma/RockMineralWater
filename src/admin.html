@@ -397,14 +397,14 @@
                           <label for='in_DispatchId'>Dispatch ID</label>
                           <input name='in_DispatchId' id='in_DispatchId' class='form-control' type='text' >
                       </div>
-                      <div class='form-group'>
+                      <!-- <div class='form-group'>
                           <label for='in_QuantityReturn'>Quantity Return</label>
                           <input name='in_QuantityReturn' id='in_QuantityReturn' class='form-control' type='text' >
                       </div>
                       <div class='form-group'>
                           <label for='in_QuantityReplaced'>Quantity Replaced</label>
                           <input name='in_QuantityReplaced' id='in_QuantityReplaced' class='form-control' type='text' >
-                      </div>
+                      </div> -->
 
 
                         <div class="text-center">
@@ -420,6 +420,11 @@
             </div>
 
           </div>
+
+
+
+
+          
         </div>
 
 
@@ -713,6 +718,41 @@
         .catch(error => console.error(error));
       // console.log();
     });
+
+
+
+    document.querySelector('#sales_create').addEventListener('click', (e) => {
+   
+
+  const salesType = document.querySelector('#in_SalesType').value;
+  const quantity = document.querySelector('#in_Quantity').value;
+  const customerName = document.querySelector('#in_CustomerName').value;
+  const customerPhone = document.querySelector('#in_CustomerPhone').value;
+  const customerAddress = document.querySelector('#in_CustomerAddress').value;
+  const amountPaid = document.querySelector('#in_AmountPaid').value;
+  const dispatchId = document.querySelector('#in_DispatchId').value;
+  const saleData = {
+    sales_type: salesType,
+    quantity: quantity,
+    customer_name: customerName,
+    customer_phone: customerPhone,
+    customer_address: customerAddress,
+    amount_paid: amountPaid,
+    dispatch_id: dispatchId,
+  };
+  
+  insertSale(saleData)
+    .then(data => console.log('Inserted sale:', data))
+    .catch(error => console.error('Error inserting sale:', error));
+      // console.log();
+    });
+
+
+
+
+
+
+
     function changePage(page) {
       document.querySelectorAll('.admin_pages').forEach((admin_pages) => {
         admin_pages.style.display = "none";

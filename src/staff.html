@@ -149,7 +149,70 @@
     </div>
     
     <div>
-        <button id="" class="bg-gradient-success" style="margin-right: 20px;color: azure;">Sell</button>
+        <button id="" class="bg-gradient-success" style="margin-right: 20px;color: azure;"data-bs-toggle="modal" data-bs-target="#salesCreate" >Sell</button>
+        <div class="modal fade" id="salesCreate" tabindex="-1" role="dialog" aria-labelledby="modalsalesTitle"
+        aria-hidden="true" style="border-radius: 0!important;">
+        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+          <div class="modal-content" style="border-radius: 0!important;">
+            <div class="modal-body p-0">
+              <div class="card card-plain">
+                <div class="card-header pb-0 text-left">
+                  <h3 class="">Sales</h3>
+                  <p class="mb-0"></p>
+                </div>
+                <div class="card-body pb-3">
+                  <form>
+                    <div class='form-group'>
+                      <label for='in_SalesType'>Type</label>
+                      <input name='in_SalesType' id='in_SalesType' class='form-control' type='text' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_Quantity'>Quantity</label>
+                      <input name='in_Quantity' id='in_Quantity' class='form-control' type='text' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_CustomerName'>Customer Name</label>
+                      <input name='in_CustomerName' id='in_CustomerName' class='form-control' type='text' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_CustomerPhone'>Customer Phone</label>
+                      <input name='in_CustomerPhone' id='in_CustomerPhone' class='form-control' type='text' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_CustomerAddress'>Customer Address</label>
+                      <input name='in_CustomerAddress' id='in_CustomerAddress' class='form-control' type='text' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_AmountPaid'>Amount Paid</label>
+                      <input name='in_AmountPaid' id='in_AmountPaid' class='form-control' type='text' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_DispatchId'>Dispatch ID</label>
+                      <input name='in_DispatchId' id='in_DispatchId' class='form-control' type='text' >
+                  </div>
+                  <!-- <div class='form-group'>
+                      <label for='in_QuantityReturn'>Quantity Return</label>
+                      <input name='in_QuantityReturn' id='in_QuantityReturn' class='form-control' type='text' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_QuantityReplaced'>Quantity Replaced</label>
+                      <input name='in_QuantityReplaced' id='in_QuantityReplaced' class='form-control' type='text' >
+                  </div> -->
+
+
+                    <div class="text-center">
+                      <button type="button" class="btn bg-gradient-success btn-lg btn-rounded w-100 mt-4 mb-0"
+                        id="sales_create">Submit</button>
+                    </div>
+                  </form>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
         <hr>
       <button id="sign_out" class="bg-gradient-danger" style="margin-right: 20px;color: azure;width: 150px;">Sign Out</button>
     </div>
@@ -190,6 +253,33 @@
 </body>
 <script src="sales.js"></script>
 <script>
+
+  document.querySelector('#sales_create').addEventListener('click', (e) => {
+   
+
+    const salesType = document.querySelector('#in_SalesType').value;
+    const quantity = document.querySelector('#in_Quantity').value;
+    const customerName = document.querySelector('#in_CustomerName').value;
+    const customerPhone = document.querySelector('#in_CustomerPhone').value;
+    const customerAddress = document.querySelector('#in_CustomerAddress').value;
+    const amountPaid = document.querySelector('#in_AmountPaid').value;
+    const dispatchId = document.querySelector('#in_DispatchId').value;
+    const saleData = {
+      sales_type: salesType,
+      quantity: quantity,
+      customer_name: customerName,
+      customer_phone: customerPhone,
+      customer_address: customerAddress,
+      amount_paid: amountPaid,
+      dispatch_id: dispatchId,
+    };
+    
+    insertSale(saleData)
+      .then(data => console.log('Inserted sale:', data))
+      .catch(error => console.error('Error inserting sale:', error));
+        // console.log();
+      });
+
   function sales() {
          const sales_tbody = document.querySelector('#sales_body');
         getAllSales().then((response) => {
