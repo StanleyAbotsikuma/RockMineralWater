@@ -98,18 +98,18 @@ function getAllSales() {
   
   // // Update a sale
   // const updatedSaleData = {
-  //   id: 1,
-  //   sales_receipt: '54321',
-  //   sales_type: 'in-person',
-  //   quantity: 5,
-  //   customer_name: 'Jane Doe',
-  //   customer_phone: '555-555-5556',
-  //   customer_address: '456 Main St.',
-  //   amount_paid: 50.00,
-  //   dispatch_id: 456,
-  //   quantity_return: 1,
-  //   quantity_replaced: 2,
-  //   date: '2023-04-09'
+    // id: 1,
+    // sales_receipt: '54321',
+    // sales_type: 'in-person',
+    // quantity: 5,
+    // customer_name: 'Jane Doe',
+    // customer_phone: '555-555-5556',
+    // customer_address: '456 Main St.',
+    // amount_paid: 50.00,
+    // dispatch_id: 456,
+    // quantity_return: 1,
+    // quantity_replaced: 2,
+    // date: '2023-04-09'
   // };
   
   // updateSale(updatedSale)
