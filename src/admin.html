@@ -634,10 +634,7 @@
                       <label for='in_StaffRole'>Staff Role</label>
                       <input name='in_StaffRole' id='in_StaffRole' class='form-control' type='tel' >
                   </div>
-                  <div class='form-group'>
-                      <label for='in_DateCreated'>Date Created</label>
-                      <input name='in_DateCreated' id='in_DateCreated' class='form-control' type='datetime' >
-                  </div>
+                 
                   <div class='form-group'>
                       <label for='in_StaffPassword'>Staff Password</label>
                       <input name='in_StaffPassword' id='in_StaffPassword' class='form-control' type='password' >
@@ -723,6 +720,60 @@
       // console.log();
     });
 
+  
+    document.querySelector('#dispatch_create').addEventListener('click', (e) => {
+      const firstName = document.getElementById('in_FirstName').value;
+  const lastName = document.getElementById('in_LastName').value;
+  const phoneNumber = document.getElementById('in_PhoneNumber').value;
+  const bikeNumberPlate = document.getElementById('in_BikeNumberPlate').value;
+  const ridersLicense = document.getElementById('in_RidersLicense').value;
+  const record = {
+    first_name: firstName,
+    last_name: lastName,
+    phone_number: phoneNumber,
+    bike_number_plate: bikeNumberPlate,
+    riders_license: ridersLicense
+  };
+  createDispatchRecord(record).then((data)=> { 
+      if(data.status =="success"){
+     location.reload();
+
+          
+    } else  if(data.status =="unsuccess"){
+     
+          
+    }});
+    });
+    document.querySelector('#staff_create').addEventListener('click', (e) => {
+    
+  const firstName = document.getElementById('in_StaffFirstName').value;
+  const lastName = document.getElementById('in_StaffLastName').value;
+  const phone = document.getElementById('in_StaffPhone').value;
+  const role = document.getElementById('in_StaffRole').value;
+  const password = document.getElementById('in_StaffPassword').value;
+
+   
+const staffData = {
+    staff_first_name: firstName,
+    staff_last_name: lastName,
+    staff_phone: phone,
+    staff_role: role,
+    staff_password: password
+  };
+  
+  insertStaffRecord(staffData)
+    .then((data)=> { 
+      if(data.status =="success"){
+     location.reload();
+
+          
+    } else  if(data.status =="unsuccess"){
+     
+          
+    }})
+    .catch(error => console.error(error));
+
+    });
 
 
     document.querySelector('#sales_create').addEventListener('click', (e) => {
