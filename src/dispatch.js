@@ -1,5 +1,5 @@
 // Set the API endpoint URL
-const API_URL = 'http://localhost/final_projects/william/resources/dispatch.php';
+const API_URL = 'http://localhost/rock_mineral_water/dispatch.php';
 
 // Retrieve all dispatch records
 async function getDispatchRecords() {
@@ -61,46 +61,3 @@ async function deleteDispatchRecord(id) {
 
 
 
-
-
-// Retrieve all dispatch records
-
-  
-  // // Retrieve a specific dispatch record by ID
-  // getDispatchRecordById(1).then(data => {
-  //   console.log(data);
-  // });
-  
-  // // Create a new dispatch record
-  // const record = {
-  //   dispatch_id: 'D1234',
-  //   first_name: 'John',
-  //   last_name: 'Doe',
-  //   phone_number: '123-456-7890',
-  //   bike_number_plate: 'AB-1234',
-  //   riders_license: '1234567',
-  //   date_created: '2023-04-08 12:00:00'
-  // };
-  // createDispatchRecord(record).then(data => {
-  //   console.log(data);
-  // });
-  
-  // // Update an existing dispatch record
-  // const updatedRecord = {
-  //   dispatch_id: 'D5678',
-  //   first_name: 'Jane',
-  //   last_name: 'Doe',
-  //   phone_number: '555-555-5555',
-  //   bike_number_plate: 'CD-5678',
-  //   riders_license: '7654321',
-  //   date_created: '2023-04-08 13:00:00'
-  // };
-  // updateDispatchRecord(1, updatedRecord).then(data => {
-  //   console.log(data);
-  // });
-  
-  // // Delete an existing dispatch record
-  // deleteDispatchRecord(1).then(data => {
-  //   console.log(data);
-  // });
-  

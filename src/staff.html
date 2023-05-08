@@ -37,14 +37,14 @@
   });
   </script>
   <style>
-    .icon{z-index: 100000;}
+    .icon{z-index: 1020;}
 
   </style>
 </head>
 
 <body>
 
-    <div data-tauri-drag-region class="titlebar">
+    <div data-tauri-drag-region class="titlebar" style="z-index: 1000!important;">
       <div class="titlebar-button" id="titlebar-minimize">
         <img
           src="https://api.iconify.design/mdi:window-minimize.svg"
@@ -157,6 +157,8 @@
     </div>
     
     <div>
+      
+      <!-- <button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#salesCreate">Sell</button> -->
         <button id="" class="bg-gradient-success" style="margin-right: 20px;color: azure;" type="button" class="btn"  data-bs-toggle="modal" data-bs-target="#salesCreate" >Sell</button>
         <div class="modal fade " id="salesCreate" tabindex="-1" role="dialog" aria-labelledby="modalsalesTitle"
         aria-hidden="true" style="border-radius: 0!important;">
@@ -218,9 +220,9 @@
               </div>
             </div>
           </div>
-        </div>
+          </div>
 
-      </div>
+        </div>
         <hr>
       <button id="sign_out" class="bg-gradient-danger" style="margin-right: 20px;color: azure;width: 150px;">Sign Out</button>
     </div>
@@ -260,6 +262,9 @@
   </div>
 </body>
 <script src="sales.js"></script>
+
+<script src="assets/js/core/popper.min.js"></script>
+<script src="assets/js/core/bootstrap.min.js"></script>
 <script>
 
   document.querySelector('#sales_create').addEventListener('click', (e) => {
@@ -283,7 +288,9 @@
     };
     
     insertSale(saleData)
-      .then(data => console.log('Inserted sale:', data))
+      .then(function (data){
+       location.reload();
+      })
       .catch(error => console.error('Error inserting sale:', error));
         // console.log();
       });

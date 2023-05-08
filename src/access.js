@@ -20,7 +20,7 @@ try {
     };
    
     
-     fetch('http://localhost/final_projects/william/resources/login.php',  {
+     fetch('http://localhost/rock_mineral_water/login.php',  {
       method: 'POST',
       body: JSON.stringify(formData),
       headers: {

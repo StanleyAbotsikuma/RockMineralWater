@@ -1,5 +1,5 @@
 // configure the API endpoint URL
-const apiUrl = 'http://localhost/final_projects/william/resources/staff.php';
+const apiUrl = 'http://localhost/rock_mineral_water/staff.php';
 
 // insert staff record function
 async function insertStaffRecord(staffData) {
@@ -86,46 +86,3 @@ async function getAllStaffRecords() {
 
 
 
-
-
-// insert a new staff record
-// const staffData = {
-//     staff_id: '12345',
-//     staff_first_name: 'John',
-//     staff_last_name: 'Doe',
-//     staff_phone: '555-1234',
-//     staff_role: 'Manager',
-//     staff_password: 'password'
-//   };
-  
-//   insertStaffRecord(staffData)
-//     .then(response => console.log(response))
-//     .catch(error => console.error(error));
-  
-//   // update an existing staff record
-//   const updatedStaffData = {
-//     staff_id: '12345',
-//     staff_first_name: 'Jane',
-//     staff_last_name: 'Doe',
-//     staff_phone: '555-5678',
-//     staff_role: 'Supervisor',
-//     staff_password: 'new_password'
-//   };
-  
-//   updateStaffRecord(1, updatedStaffData)
-//     .then(response => console.log(response))
-//     .catch(error => console.error(error));
-  
-//   // delete a staff record
-//   deleteStaffRecord(1)
-//     .then(response => console.log(response))
-//     .catch(error => console.error(error));
-  
-//   // get a single staff record
-//   getStaffRecord(1)
-//     .then(response => console.log(response))
-//     .catch(error => console.error(error));
-  
-  // get all staff records
- 
-  

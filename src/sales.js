@@ -1,4 +1,4 @@
-const API_ENDPOINT = 'http://localhost/final_projects/william/resources/sales.php';
+const API_ENDPOINT = 'http://localhost/rock_mineral_water/sales.php';
 
 // Insert Endpoint
 function insertSale(saleData) {

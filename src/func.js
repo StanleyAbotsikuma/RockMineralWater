@@ -1,6 +1,6 @@
 function ru() {
 
-    fetch('http://localhost/final_projects/william/resources/sales.php?r=t', {
+    fetch('http://localhost/rock_mineral_water/sales.php?r=t', {
         method: 'GET',
 
         headers: {
@@ -105,7 +105,7 @@ function quantityReplaced(res) {
 
 let h = 0;
 let g = 0;
-const dayDetails = fetch('http://localhost/final_projects/william/resources/stock.php?r=t', {
+const dayDetails = fetch('http://localhost/rock_mineral_water/stock.php?r=t', {
     method: 'GET',
     headers: {
         'Content-Type': 'application/json'

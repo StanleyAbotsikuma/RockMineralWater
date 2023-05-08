@@ -714,7 +714,9 @@
 
     document.querySelector('#stock_create').addEventListener('click', (e) => {
       insertStockRecord(document.querySelector('#number_of_bags').value)
-        .then(data => console.log(data.message))
+        .then((data)=>{
+          location.reload();
+        })
         .catch(error => console.error(error));
       // console.log();
     });
@@ -742,7 +744,18 @@
   };
   
   insertSale(saleData)
-    .then(data => console.log('Inserted sale:', data))
+    .then(
+      (data)=> { 
+      if(data.status =="success"){
+     location.reload();
+
+          
+    } else  if(data.status =="unsuccess"){
+     
+          
+    }
+  
+  })
     .catch(error => console.error('Error inserting sale:', error));
      console.log(error);
     });

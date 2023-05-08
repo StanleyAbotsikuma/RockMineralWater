@@ -1,4 +1,4 @@
-const BASE_URL = 'http://localhost/final_projects/william/resources/stock.php';
+const BASE_URL = 'http://localhost/rock_mineral_water/stock.php';
 
 async function insertStockRecord(stock_produced) {
   const response = await fetch(`${BASE_URL}`, {
