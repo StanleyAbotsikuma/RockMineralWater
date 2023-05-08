@@ -714,10 +714,72 @@
 
     document.querySelector('#stock_create').addEventListener('click', (e) => {
       insertStockRecord(document.querySelector('#number_of_bags').value)
-        .then(data => console.log(data.message))
+        .then((data)=>{
+          location.reload();
+        })
         .catch(error => console.error(error));
       // console.log();
     });
+
+    // dispatch_create
+    // staff_create
+
+    
+    document.querySelector('#dispatch_create').addEventListener('click', (e) => {
+      const firstName = document.getElementById('in_FirstName').value;
+  const lastName = document.getElementById('in_LastName').value;
+  const phoneNumber = document.getElementById('in_PhoneNumber').value;
+  const bikeNumberPlate = document.getElementById('in_BikeNumberPlate').value;
+  const ridersLicense = document.getElementById('in_RidersLicense').value;
+  const record = {
+    first_name: firstName,
+    last_name: lastName,
+    phone_number: phoneNumber,
+    bike_number_plate: bikeNumberPlate,
+    riders_license: ridersLicense
+  };
+  createDispatchRecord(record).then((data)=> { 
+      if(data.status =="success"){
+     location.reload();
+
+          
+    } else  if(data.status =="unsuccess"){
+     
+          
+    }});
+    });
+    document.querySelector('#staff_create').addEventListener('click', (e) => {
+    
+  const firstName = document.getElementById('in_StaffFirstName').value;
+  const lastName = document.getElementById('in_StaffLastName').value;
+  const phone = document.getElementById('in_StaffPhone').value;
+  const role = document.getElementById('in_StaffRole').value;
+  const password = document.getElementById('in_StaffPassword').value;
+
+   
+const staffData = {
+    staff_first_name: firstName,
+    staff_last_name: lastName,
+    staff_phone: phone,
+    staff_role: role,
+    staff_password: password
+  };
+  
+  insertStaffRecord(staffData)
+    .then((data)=> { 
+      if(data.status =="success"){
+     location.reload();
+
+          
+    } else  if(data.status =="unsuccess"){
+     
+          
+    }})
+    .catch(error => console.error(error));
+
+    });
+
+
 
 
 
@@ -742,7 +804,18 @@
   };
   
   insertSale(saleData)
-    .then(data => console.log('Inserted sale:', data))
+    .then(
+      (data)=> { 
+      if(data.status =="success"){
+     location.reload();
+
+          
+    } else  if(data.status =="unsuccess"){
+     
+          
+    }
+  
+  })
     .catch(error => console.error('Error inserting sale:', error));
      console.log(error);
     });
