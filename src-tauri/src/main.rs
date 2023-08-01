@@ -14,15 +14,16 @@ fn greet(name: &str) -> String {
 #[tauri::command]
  fn staff_window(window: tauri::Window) {
     window.center().unwrap();
-    
-  window.set_size(Size::Physical(PhysicalSize { width: 1450, height: 850 })).unwrap();
+    // window.set_size(Size::Physical(PhysicalSize { width: 1450, height: 850 })).unwrap();
+
+  window.set_size(Size::Physical(PhysicalSize { width: 1050, height: 550 })).unwrap();
   window.center().unwrap();
 }
 
 #[tauri::command]
  fn admin_window(window: tauri::Window) {
-  
-  window.set_size(Size::Physical(PhysicalSize { width: 1490, height: 850 })).unwrap();
+  // window.set_size(Size::Physical(PhysicalSize { width: 1490, height: 850 })).unwrap();
+  window.set_size(Size::Physical(PhysicalSize { width: 1090, height: 550 })).unwrap();
   window.center().unwrap();
 }
 

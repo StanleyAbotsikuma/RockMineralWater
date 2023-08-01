@@ -54,8 +54,8 @@
         "fullscreen": false,
         "resizable": false,
         "title": "Rock Mineral Water",
-        "width": 450,
-        "height": 700,
+        "width": 350,
+        "height": 500,
         "decorations": false,
         "center": true
       }
