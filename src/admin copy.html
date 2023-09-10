@@ -29,7 +29,7 @@
 
   <script type="module" src="access.js" defer></script>
   <script src="assets/js/material-dashboard.min.js"></script>
-
+  
   <script disable-devtool-auto src='disable-devtool@latest.js'></script>
   <script type="module" defer>
     const { invoke } = window.__TAURI__.tauri;
@@ -62,7 +62,7 @@
     id="sidenav-main" style="    padding: 0!important;
     margin: 0!important;background-color:#1875be;border-radius: 0%;">
     <div class="sidenav-header">
-      <h3 style="color: #fff;padding: 20px;text-align: center;font-size:x-large;">Rock</h3>
+      <h3 style="color: #fff;padding: 20px;text-align: center;font-size:x-large;">Rock Mineral Water</h3>
     </div>
     <br>
 
@@ -317,7 +317,7 @@
                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Stock
                   Produced</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Date</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
+
               </tr>
             </thead>
             <tbody id="stock_body">
@@ -373,33 +373,33 @@
                       <form>
                         <div class='form-group'>
                           <label for='in_SalesType'>Type</label>
-                          <input name='in_SalesType' id='in_SalesType' class='form-control' type='text'>
-                        </div>
-                        <div class='form-group'>
+                          <input name='in_SalesType' id='in_SalesType' class='form-control' type='text' >
+                      </div>
+                      <div class='form-group'>
                           <label for='in_Quantity'>Quantity</label>
-                          <input name='in_Quantity' id='in_Quantity' class='form-control' type='text'>
-                        </div>
-                        <div class='form-group'>
+                          <input name='in_Quantity' id='in_Quantity' class='form-control' type='text' >
+                      </div>
+                      <div class='form-group'>
                           <label for='in_CustomerName'>Customer Name</label>
-                          <input name='in_CustomerName' id='in_CustomerName' class='form-control' type='text'>
-                        </div>
-                        <div class='form-group'>
+                          <input name='in_CustomerName' id='in_CustomerName' class='form-control' type='text' >
+                      </div>
+                      <div class='form-group'>
                           <label for='in_CustomerPhone'>Customer Phone</label>
-                          <input name='in_CustomerPhone' id='in_CustomerPhone' class='form-control' type='text'>
-                        </div>
-                        <div class='form-group'>
+                          <input name='in_CustomerPhone' id='in_CustomerPhone' class='form-control' type='text' >
+                      </div>
+                      <div class='form-group'>
                           <label for='in_CustomerAddress'>Customer Address</label>
-                          <input name='in_CustomerAddress' id='in_CustomerAddress' class='form-control' type='text'>
-                        </div>
-                        <div class='form-group'>
+                          <input name='in_CustomerAddress' id='in_CustomerAddress' class='form-control' type='text' >
+                      </div>
+                      <div class='form-group'>
                           <label for='in_AmountPaid'>Amount Paid</label>
-                          <input name='in_AmountPaid' id='in_AmountPaid' class='form-control' type='text'>
-                        </div>
-                        <div class='form-group'>
+                          <input name='in_AmountPaid' id='in_AmountPaid' class='form-control' type='text' >
+                      </div>
+                      <div class='form-group'>
                           <label for='in_DispatchId'>Dispatch ID</label>
-                          <input name='in_DispatchId' id='in_DispatchId' class='form-control' type='text'>
-                        </div>
-                        <!-- <div class='form-group'>
+                          <input name='in_DispatchId' id='in_DispatchId' class='form-control' type='text' >
+                      </div>
+                      <!-- <div class='form-group'>
                           <label for='in_QuantityReturn'>Quantity Return</label>
                           <input name='in_QuantityReturn' id='in_QuantityReturn' class='form-control' type='text' >
                       </div>
@@ -426,7 +426,7 @@
 
 
 
-
+          
         </div>
 
 
@@ -454,7 +454,6 @@
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Returned</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Replaced</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Date</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Action</th>
 
               </tr>
             </thead>
@@ -494,58 +493,58 @@
           right: 0;
           position: absolute;
       ">
-            Register
-          </button>
+        Register
+      </button>
 
-          <!-- Modal -->
-          <div class="modal fade" id="dispatchCreate" tabindex="-1" role="dialog" aria-labelledby="modaldispatchTitle"
-            aria-hidden="true" style="border-radius: 0!important;">
-            <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-              <div class="modal-content" style="border-radius: 0!important;">
-                <div class="modal-body p-0">
-                  <div class="card card-plain">
-                    <div class="card-header pb-0 text-left">
-                      <h3 class="">Dispatch Registration Form</h3>
-
-                      <br>
-                    </div>
-                    <div class="card-body pb-3">
-                      <form>
-                        <div class='form-group'>
-                          <label for='in_FirstName'>First Name</label>
-                          <input name='in_FirstName' id='in_FirstName' class='form-control' type='text'>
-                        </div>
-                        <div class='form-group'>
-                          <label for='in_LastName'>Last Name</label>
-                          <input name='in_LastName' id='in_LastName' class='form-control' type='text'>
-                        </div>
-                        <div class='form-group'>
-                          <label for='in_PhoneNumber'>Phone Number</label>
-                          <input name='in_PhoneNumber' id='in_PhoneNumber' class='form-control' type='tel'>
-                        </div>
-                        <div class='form-group'>
-                          <label for='in_BikeNumberPlate'>Bike Number Plate</label>
-                          <input name='in_BikeNumberPlate' id='in_BikeNumberPlate' class='form-control' type='text'>
-                        </div>
-                        <div class='form-group'>
-                          <label for='in_RidersLicense'>Riders License</label>
-                          <input name='in_RidersLicense' id='in_RidersLicense' class='form-control' type='text'>
-                        </div>
-
-
-                        <div class="text-center">
-                          <button type="button" class="btn bg-gradient-success btn-lg btn-rounded w-100 mt-4 mb-0"
-                            id="dispatch_create">Submit</button>
-                        </div>
-                      </form>
-                    </div>
-
-                  </div>
+      <!-- Modal -->
+      <div class="modal fade" id="dispatchCreate" tabindex="-1" role="dialog" aria-labelledby="modaldispatchTitle"
+        aria-hidden="true" style="border-radius: 0!important;">
+        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+          <div class="modal-content" style="border-radius: 0!important;">
+            <div class="modal-body p-0">
+              <div class="card card-plain">
+                <div class="card-header pb-0 text-left">
+                  <h3 class="">Dispatch Registration Form</h3>
+                
+                  <br>
                 </div>
+                <div class="card-body pb-3">
+                  <form>
+                    <div class='form-group'>
+                      <label for='in_FirstName'>First Name</label>
+                      <input name='in_FirstName' id='in_FirstName' class='form-control' type='text' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_LastName'>Last Name</label>
+                      <input name='in_LastName' id='in_LastName' class='form-control' type='text' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_PhoneNumber'>Phone Number</label>
+                      <input name='in_PhoneNumber' id='in_PhoneNumber' class='form-control' type='tel' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_BikeNumberPlate'>Bike Number Plate</label>
+                      <input name='in_BikeNumberPlate' id='in_BikeNumberPlate' class='form-control' type='text' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_RidersLicense'>Riders License</label>
+                      <input name='in_RidersLicense' id='in_RidersLicense' class='form-control' type='text' >
+                  </div>
+
+
+                    <div class="text-center">
+                      <button type="button" class="btn bg-gradient-success btn-lg btn-rounded w-100 mt-4 mb-0"
+                        id="dispatch_create">Submit</button>
+                    </div>
+                  </form>
+                </div>
+
               </div>
             </div>
-
           </div>
+        </div>
+
+      </div>
         </div>
 
 
@@ -566,7 +565,7 @@
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">#Bike Number</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> License ID</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Date</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Action</th>
+
               </tr>
             </thead>
             <tbody id="dispatch_body">
@@ -603,61 +602,58 @@
           right: 0;
           position: absolute;
       ">
-            Add
-          </button>
+        Add
+      </button>
 
-          <!-- Modal -->
-          <div class="modal fade" id="staffCreate" tabindex="-1" role="dialog" aria-labelledby="modalstaffTitle"
-            aria-hidden="true" style="border-radius: 0!important;">
-            <div class="modal-dialog modal-dialog-centered modal-md" role="document">
-              <div class="modal-content" style="border-radius: 0!important;">
-                <div class="modal-body p-0">
-                  <div class="card card-plain">
-                    <div class="card-header pb-0 text-left">
-                      <h5 class="">Staff Registration</h5>
-                      <br>
-                    </div>
-                    <div class="card-body pb-3">
-                      <form>
-                        <div class='form-group'>
-                          <label for='in_StaffFirstName'>Staff First Name</label>
-                          <input name='in_StaffFirstName' id='in_StaffFirstName' class='form-control' type='text'>
-                        </div>
-                        <div class='form-group'>
-                          <label for='in_StaffLastName'>Staff Last Name</label>
-                          <input name='in_StaffLastName' id='in_StaffLastName' class='form-control' type='text'>
-                        </div>
-                        <div class='form-group'>
-                          <label for='in_StaffPhone'>Staff Phone</label>
-                          <input name='in_StaffPhone' id='in_StaffPhone' class='form-control' type='tel'>
-                        </div>
-                        <div class='form-group'>
-                          <label for='in_StaffRole'>Staff Role</label>
-                          <input name='in_StaffRole' id='in_StaffRole' class='form-control' type='tel'>
-                        </div>
-                        <div class='form-group'>
-                          <label for='in_DateCreated'>Date Created</label>
-                          <input name='in_DateCreated' id='in_DateCreated' class='form-control' type='datetime'>
-                        </div>
-                        <div class='form-group'>
-                          <label for='in_StaffPassword'>Staff Password</label>
-                          <input name='in_StaffPassword' id='in_StaffPassword' class='form-control' type='password'>
-                        </div>
-
-
-                        <div class="text-center">
-                          <button type="button" class="btn bg-gradient-success btn-lg btn-rounded w-100 mt-4 mb-0"
-                            id="staff_create">Submit</button>
-                        </div>
-                      </form>
-                    </div>
-
-                  </div>
+      <!-- Modal -->
+      <div class="modal fade" id="staffCreate" tabindex="-1" role="dialog" aria-labelledby="modalstaffTitle"
+        aria-hidden="true" style="border-radius: 0!important;">
+        <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+          <div class="modal-content" style="border-radius: 0!important;">
+            <div class="modal-body p-0">
+              <div class="card card-plain">
+                <div class="card-header pb-0 text-left">
+                  <h5 class="">Staff Registration</h5>
+                 <br>
                 </div>
+                <div class="card-body pb-3">
+                  <form>
+                    <div class='form-group'>
+                      <label for='in_StaffFirstName'>Staff First Name</label>
+                      <input name='in_StaffFirstName' id='in_StaffFirstName' class='form-control' type='text' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_StaffLastName'>Staff Last Name</label>
+                      <input name='in_StaffLastName' id='in_StaffLastName' class='form-control' type='text' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_StaffPhone'>Staff Phone</label>
+                      <input name='in_StaffPhone' id='in_StaffPhone' class='form-control' type='tel' >
+                  </div>
+                  <div class='form-group'>
+                      <label for='in_StaffRole'>Staff Role</label>
+                      <input name='in_StaffRole' id='in_StaffRole' class='form-control' type='tel' >
+                  </div>
+                 
+                  <div class='form-group'>
+                      <label for='in_StaffPassword'>Staff Password</label>
+                      <input name='in_StaffPassword' id='in_StaffPassword' class='form-control' type='password' >
+                  </div>
+
+
+                    <div class="text-center">
+                      <button type="button" class="btn bg-gradient-success btn-lg btn-rounded w-100 mt-4 mb-0"
+                        id="staff_create">Submit</button>
+                    </div>
+                  </form>
+                </div>
+
               </div>
             </div>
-
           </div>
+        </div>
+
+      </div>
         </div>
 
 
@@ -673,7 +669,7 @@
                 </th>
                 <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Phone</th>
                 <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Role</th>
-                <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"> Action</th>
+
               </tr>
             </thead>
             <tbody id="Staffs_body">
@@ -717,112 +713,104 @@
 
     document.querySelector('#stock_create').addEventListener('click', (e) => {
       insertStockRecord(document.querySelector('#number_of_bags').value)
-        .then((data) => {
+        .then((data)=>{
           location.reload();
         })
         .catch(error => console.error(error));
       // console.log();
     });
 
-    // dispatch_create
-    // staff_create
-
-
+  
     document.querySelector('#dispatch_create').addEventListener('click', (e) => {
       const firstName = document.getElementById('in_FirstName').value;
-      const lastName = document.getElementById('in_LastName').value;
-      const phoneNumber = document.getElementById('in_PhoneNumber').value;
-      const bikeNumberPlate = document.getElementById('in_BikeNumberPlate').value;
-      const ridersLicense = document.getElementById('in_RidersLicense').value;
-      const record = {
-        first_name: firstName,
-        last_name: lastName,
-        phone_number: phoneNumber,
-        bike_number_plate: bikeNumberPlate,
-        riders_license: ridersLicense
-      };
-      createDispatchRecord(record).then((data) => {
-        if (data.status == "success") {
-          location.reload();
+  const lastName = document.getElementById('in_LastName').value;
+  const phoneNumber = document.getElementById('in_PhoneNumber').value;
+  const bikeNumberPlate = document.getElementById('in_BikeNumberPlate').value;
+  const ridersLicense = document.getElementById('in_RidersLicense').value;
+  const record = {
+    first_name: firstName,
+    last_name: lastName,
+    phone_number: phoneNumber,
+    bike_number_plate: bikeNumberPlate,
+    riders_license: ridersLicense
+  };
+  createDispatchRecord(record).then((data)=> { 
+      if(data.status =="success"){
+     location.reload();
 
-
-        } else if (data.status == "unsuccess") {
-
-
-        }
-      });
+          
+    } else  if(data.status =="unsuccess"){
+     
+          
+    }});
     });
     document.querySelector('#staff_create').addEventListener('click', (e) => {
+    
+  const firstName = document.getElementById('in_StaffFirstName').value;
+  const lastName = document.getElementById('in_StaffLastName').value;
+  const phone = document.getElementById('in_StaffPhone').value;
+  const role = document.getElementById('in_StaffRole').value;
+  const password = document.getElementById('in_StaffPassword').value;
 
-      const firstName = document.getElementById('in_StaffFirstName').value;
-      const lastName = document.getElementById('in_StaffLastName').value;
-      const phone = document.getElementById('in_StaffPhone').value;
-      const role = document.getElementById('in_StaffRole').value;
-      const password = document.getElementById('in_StaffPassword').value;
+   
+const staffData = {
+    staff_first_name: firstName,
+    staff_last_name: lastName,
+    staff_phone: phone,
+    staff_role: role,
+    staff_password: password
+  };
+  
+  insertStaffRecord(staffData)
+    .then((data)=> { 
+      if(data.status =="success"){
+     location.reload();
 
-
-      const staffData = {
-        staff_first_name: firstName,
-        staff_last_name: lastName,
-        staff_phone: phone,
-        staff_role: role,
-        staff_password: password
-      };
-
-      insertStaffRecord(staffData)
-        .then((data) => {
-          if (data.status == "success") {
-            location.reload();
-
-
-          } else if (data.status == "unsuccess") {
-
-
-          }
-        })
-        .catch(error => console.error(error));
+          
+    } else  if(data.status =="unsuccess"){
+     
+          
+    }})
+    .catch(error => console.error(error));
 
     });
-
-
-
 
 
     document.querySelector('#sales_create').addEventListener('click', (e) => {
+   
 
+  const salesType = document.querySelector('#in_SalesType').value;
+  const quantity = document.querySelector('#in_Quantity').value;
+  const customerName = document.querySelector('#in_CustomerName').value;
+  const customerPhone = document.querySelector('#in_CustomerPhone').value;
+  const customerAddress = document.querySelector('#in_CustomerAddress').value;
+  const amountPaid = document.querySelector('#in_AmountPaid').value;
+  const dispatchId = document.querySelector('#in_DispatchId').value;
+  const saleData = {
+    sales_type: salesType,
+    quantity: quantity,
+    customer_name: customerName,
+    customer_phone: customerPhone,
+    customer_address: customerAddress,
+    amount_paid: amountPaid,
+    dispatch_id: dispatchId
+  };
+  
+  insertSale(saleData)
+    .then(
+      (data)=> { 
+      if(data.status =="success"){
+     location.reload();
 
-      const salesType = document.querySelector('#in_SalesType').value;
-      const quantity = document.querySelector('#in_Quantity').value;
-      const customerName = document.querySelector('#in_CustomerName').value;
-      const customerPhone = document.querySelector('#in_CustomerPhone').value;
-      const customerAddress = document.querySelector('#in_CustomerAddress').value;
-      const amountPaid = document.querySelector('#in_AmountPaid').value;
-      const dispatchId = document.querySelector('#in_DispatchId').value;
-      const saleData = {
-        sales_type: salesType,
-        quantity: quantity,
-        customer_name: customerName,
-        customer_phone: customerPhone,
-        customer_address: customerAddress,
-        amount_paid: amountPaid,
-        dispatch_id: dispatchId
-      };
-
-      insertSale(saleData)
-        .then(
-          (data) => {
-            if (data.status == "success") {
-              location.reload();
-
-
-            } else if (data.status == "unsuccess") {
-
-
-            }
-
-          })
-        .catch(error => console.error('Error inserting sale:', error));
-      console.log(error);
+          
+    } else  if(data.status =="unsuccess"){
+     
+          
+    }
+  
+  })
+    .catch(error => console.error('Error inserting sale:', error));
+     console.log(error);
     });
 
 
@@ -873,8 +861,6 @@
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${stock_previous}</span></td>
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${stock_produced}</span></td>
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${date}</span></td>
-                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'><button style='width: fit-content;
-    height: fit-content;' onclick='deleteRecord(${id},"stocks")'><img src='assets/img/bin.png' style="width: 20px;"></button></span></td>
                 </tr>`;
             });
             // console.log(data);
@@ -888,7 +874,7 @@
         getAllSales().then((response) => {
           sales_tbody.innerHTML = "";
           response.forEach(dts => {
-            let { id,
+            let{id,
               sales_receipt,
               sales_type,
               quantity,
@@ -899,7 +885,7 @@
               dispatch_id,
               quantity_return,
               quantity_replaced,
-              date } = dts;
+              date} = dts;
             sales_tbody.innerHTML += `<tr>
                   <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${id}</span></td>
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${sales_receipt}</span></td>
@@ -913,8 +899,6 @@
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${quantity_return}</span></td>
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${quantity_replaced}</span></td> 
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${date}</span></td>
-                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'><button style='width: fit-content;
-    height: fit-content;' onclick='deleteRecord(${id},"sales")'><img src='assets/img/bin.png' style="width: 20px;"></button></span></td>
                 </tr>`;
           });
           // console.log(data);
@@ -941,8 +925,6 @@
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${bike_number_plate}</span></td>
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${riders_license}</span></td> 
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${date_created}</span></td>
-                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'><button style='width: fit-content;
-    height: fit-content;' onclick='deleteRecord(${id},"dispatch")'><img src='assets/img/bin.png' style="width: 20px;"></button></span></td>
                 </tr>`;
             });
             // console.log(data);
@@ -968,8 +950,6 @@
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${staff_last_name}</span></td>
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${staff_phone}</span></td>
                     <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'>${staff_role}</span></td>
-                    <td class='align-middle text-center'><span class='text-secondary text-xs font-weight-normal'><button style='width: fit-content;
-    height: fit-content;' onclick='deleteRecord(${id},"staffs")'><img src='assets/img/bin.png' style="width: 20px;"></button></span></td>
                 </tr>`;
             });
             // console.log(data);
@@ -983,33 +963,6 @@
         damping: '0.5'
       }
       Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
-    }
-
-
-    function deleteRecord(id, type) {
-      switch (type) {
-        case "stocks":
-          deleteStockRecord(id).then((data) => {
-            changePage(type);
-          });
-          break;
-        case "sales":
-          deleteSale(id).then((data) => {
-            changePage(type);
-          })
-          break;
-        case "dispatch":
-          deleteDispatchRecord(id).then((data) => {
-            changePage(type);
-          })
-          break;
-        case "staffs":
-          deleteStaffRecord(id).then((data) => {
-            changePage(type);
-          })
-          break;
-      }
-
     }
   </script>
 
